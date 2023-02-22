@@ -1,6 +1,5 @@
 #include <iostream>
-#include "IntNode.hpp"
-#include "IntStack.hpp"
+#include "Lab3_Grp14_struct.hpp"
 using namespace std;
 
 int main(void){
@@ -9,9 +8,12 @@ int main(void){
 
     IntNode item;
 
-    initialNode.next = item;
-    initialNode.next = head;
-    head.next = initialNode;
+    cin >> item.value;
+    cout << item.value << endl;
+
+    initialNode.next = &item;
+    initialNode.next = &head;
+    head.next = &initialNode;
     
     //Memory deallocation
     //delete newNode;
