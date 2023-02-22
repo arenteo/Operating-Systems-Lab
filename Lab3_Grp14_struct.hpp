@@ -6,12 +6,7 @@ struct IntNode{
 };
 
 typedef struct {
-    IntNode* top=NULL;  
-} IntStack;
-
-class Stack {
-public:
-    //push method
+    IntNode* top=NULL;    
     void push(int data){
         IntNode* newNode = new IntNode;
         newNode->value = data;
@@ -19,7 +14,6 @@ public:
         top = newNode;
     }
 
-    //pop method
     void pop(){
         if (top == NULL) {
             cout << "Stack is empty" << endl;
@@ -32,11 +26,8 @@ public:
     int peek() {
         if (top == NULL) {
             cout << "Stack is empty" << endl;
-            return -1;
         }
         return top->value;
     }
+} IntStack;
 
-private:
-    IntNode* top;
-};

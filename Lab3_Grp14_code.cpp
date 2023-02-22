@@ -5,60 +5,38 @@
 using namespace std;
 
 int main(void){
-    IntNode head;
-    IntNode initialNode; 
+
     IntNode item;
+    IntStack g;
 
     int func;
     int exit=0;
-    int y;
+    int y, z;
 
-    while (exit == 0) {
+    do {
         cout<<"Enter function: 1-Push 2-Pop\n";
+        cout<<"                3-Peek 4++-Quit\n";
         cin>>func;
-        if (func == 1)
-        {
-            cout << "enter value: " << endl;
-            cin >> item.value;
-            cout << item.value;
-        } else if (func == 2)
-        {
-            Stack g;
-            cout <<"top is: "<< g.peek() << endl;
-        } else
-        {
-            cout << "Not valid option, will exit";
-            exit += 1;
+
+        if(func > 3){
+            cout << "not valid option, will quit";
+            exit++;
+        }
+
+        switch (func){
+            case 1: 
+                cout << "enter integer value:" << endl;
+                cin >> z;
+                g.push(z);
+                break; 
+            case 2:
+                cout << "removing: " << g.peek() << endl; 
+                g.pop();
+                break;
+            case 3:
+                cout << g.peek() << endl;
+                break;
         } 
-        
-        // switch (func){
-        //     case 1: 
-        //         cout << "enter value: " << endl;
-        //         cin >> item.value;
-        //         //push()
-        //         break; 
-        //     case 2:
-        //         //pop()
-        //         break;
-        //     case 3:
-        //         Stack g;
-        //         cout << g.peek() << endl;
-        //         break;
-        //     case 4:
-        //         cout << "Not valid option, will exit";
-        //         exit += 1;
-        //         break;
-
-        // } 
-    }
-
-
-    // initialNode.next = &item;
-    // initialNode.next = &head;
-    // head.next = &initialNode;
-    
-    //Memory deallocation
-    //delete newNode;
-    //IntNode* newNode = NULL;
+    } while (exit == 0);
 }
 
