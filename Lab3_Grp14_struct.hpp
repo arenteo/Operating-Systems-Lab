@@ -12,3 +12,7 @@ struct IntNode{
 
     }
 };
+
+struct IntStack{
+    
+}

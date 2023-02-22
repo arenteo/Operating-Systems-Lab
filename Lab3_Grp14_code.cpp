@@ -1,6 +1,5 @@
 #include <iostream>
-#include "IntNode.hpp"
-#include "IntStack.hpp"
+#include "Lab3_Grp14_struct.hpp"
 using namespace std;
 
 int main(void){
