@@ -5,11 +5,9 @@ using namespace std;
 int main(void){
     IntNode head;
     IntNode initialNode; 
-
     IntNode item;
 
     cin >> item.value;
-    cout << item.value << endl;
 
     initialNode.next = &item;
     initialNode.next = &head;

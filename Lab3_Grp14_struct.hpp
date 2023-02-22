@@ -6,8 +6,11 @@ struct IntNode{
 struct IntStack{
 
     //push method
-    void push(){
-        
+    void push(int value){
+        IntNode* newNode = new IntNode;
+        newNode->value = newVal;
+        newNode->next = top.
+        top = newNode;
     }
 
     //pop method
