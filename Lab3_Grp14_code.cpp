@@ -7,10 +7,15 @@ int main(void){
     IntNode initialNode; 
 
     IntNode item;
+    item.value = 5;
 
+    //link nodes to each other
     initialNode.next = item;
     initialNode.next = head;
     head.next = initialNode;
+
+    //print values
+    cout << item.value << endl;
     
     //Memory deallocation
     //delete newNode;

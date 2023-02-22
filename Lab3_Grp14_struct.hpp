@@ -2,6 +2,9 @@ struct IntNode{
     int value;
     IntNode* next;
 
+};
+
+struct IntStack{
     //push method
     void push(){
 
@@ -11,8 +14,4 @@ struct IntNode{
     void push(){
 
     }
-};
-
-struct IntStack{
-    
 }
