@@ -1,15 +1,21 @@
-struct IntNode{
+typedef struct {
     int value;
     IntNode* next;
-};
+} IntNode;
 
-struct IntStack{
+
+class Stack {
+public:
+    typedef struct {
+        top=NULL;
+        newVal;  
+    } IntStack;
 
     //push method
     void push(int value){
         IntNode* newNode = new IntNode;
         newNode->value = newVal;
-        newNode->next = top.
+        newNode->next = top;
         top = newNode;
     }
 
@@ -17,5 +23,4 @@ struct IntStack{
     void pop(){
 
     }
-    
-};
+}
