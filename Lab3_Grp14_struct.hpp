@@ -6,7 +6,16 @@ struct IntNode{
 };
 
 typedef struct {
-    IntNode* top=NULL;    
+    IntNode* top=NULL;
+    void traverse(){
+        IntNode* now = top;
+        while (now != NULL){
+            cout << now->value << " ";
+            now = now->next;
+        }
+        cout<<endl;
+    }
+
     void push(int data){
         IntNode* newNode = new IntNode;
         newNode->value = data;
