@@ -25,18 +25,13 @@ void *sin_func(void *yarg){
     struct thread_args* args = (struct thread_args*) yarg;
     int start_term = args->id_num * numterms;
     int end_term = start_term + args->numthr;
-    int i = args->id_num;
-    double input = args->rad;
-    int numberthr = args->numthr;
-    int sign = 1;
-    
+    int i = args->id_num, numberthr = args->numthr, sign = 1;
+    double radin = args->rad, term;
+
     for(i=start_term; i<end_term; i+=numberthr){
         double currnum = 2*i+1;
-        double term, radin = *(double*)yarg;
-        double currnumd = (double) currnum;
-        
         term = sign * pow(radin, currnum) / factorial(currnum);
-        sum += term;
+        args->result += term;
         sign *= -1;
         printf("loop number: %d",i);
     }
@@ -48,8 +43,8 @@ int main(int argc, char **argv){
         printf("Error: only two arguments needed");
         return 1;
     }
-    int threadin = atof(argv[0]), radin = atof(argv[1]); //possible that args start at argv[1]
-    double resultout;
+    int threadin = atoi(argv[0]), radin = atoi(argv[1]); //possible that args start at argv[1]
+    double resultout=0;
 
     pthread_t th[threadin];
     struct thread_args thread_data[threadin];
