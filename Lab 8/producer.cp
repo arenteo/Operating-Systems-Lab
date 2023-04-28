@@ -13,7 +13,7 @@
 
 using namespace std;
 
-int sem(), shm();
+int sem(), shm(), writeshm();
 
 int main( int argc, char* argv[] )
 {
@@ -169,7 +169,7 @@ int shm()
 
         // Write to shared memory...
         if(){ //**there is something to write
-            strcpy( shm_data, data);
+            writefromfile(shm_data, data) 
             status = "written";
             strcpy( shm_status, status);
         }
@@ -194,6 +194,19 @@ int shm()
 
         printf( "%s\n", buffer3 );
     }
+
+    return 0;
+}
+
+int writefromfile(char* shm_data, const char* data) {
+    std::ifstream infile("input.txt"); // Open the file for reading
+
+    std::string line;
+    while (std::getline(infile, line)) { // Read each line of the file
+       strcpy(shm_data, data);
+    }
+
+    infile.close(); // Close the file when finished
 
     return 0;
 }
