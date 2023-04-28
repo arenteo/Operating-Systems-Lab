@@ -5,12 +5,11 @@
 void *run(void *ptr);
 
 int main(int argc, char *argv[]) {
-    //Abort and print error message if argc is 1
     if (argc == 1) {
-        fprintf(stderr, "Error\n");
+        fprintf(stderr, "Error: no arguments provided.\n");
         exit(1);
     }
-
+    
     int *arr = malloc((argc - 1) * sizeof(int));
     for (int i = 1; i < argc; i++) {
         arr[i - 1] = atoi(argv[i]);
@@ -46,6 +45,7 @@ void *run(void *ptr) {
     }
     
     *((int*) ptr + 1) = value;
+    printf("arr[%d](old) has been replaced with arr[%d](new)\n", index, index);
     
     return NULL;
 }
